@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Opening Teams...</title>
+</head>
+<body>
+  <p>Teams 앱으로 연결 중입니다...</p>
+  <p>자동으로 열리지 않으면 아래 버튼을 눌러주세요.</p>
+
+  <button onclick="location.href='msteams://teams.microsoft.com/l/app/be02aee1-9c96-48da-8e90-8b36ea866c88'">
+    Teams로 열기
+  </button>
+
+  <script>
+    location.href = "msteams://teams.microsoft.com/l/app/be02aee1-9c96-48da-8e90-8b36ea866c88";
+    setTimeout(function () {
+      location.href = "https://www.microsoft.com/microsoft-teams/download-app";
+    }, 1500);
+  </script>
+</body>
+</html>
