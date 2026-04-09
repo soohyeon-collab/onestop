@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Opening Slack...</title>
+</head>
+<body>
+  <p>Slack 앱으로 연결 중입니다...</p>
+  <p>자동으로 열리지 않으면 아래 버튼을 눌러주세요.</p>
+
+  <button onclick="location.href='slack://app?team=E0573HVHDBR&id=A0AAF4RFG3G'">
+    Slack으로 열기
+  </button>
+
+  <script>
+    location.href = "slack://app?team=E0573HVHDBR&id=A0AAF4RFG3G";
+    setTimeout(function () {
+      location.href = "https://slack.com/downloads";
+    }, 1500);
+  </script>
+</body>
+</html>
