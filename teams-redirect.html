@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Teams로 연결 중...</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f8f8f8;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+      padding: 48px 40px;
+      text-align: center;
+      max-width: 400px;
+      width: 90%;
+    }
+
+    .teams-logo {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 24px;
+    }
+
+    h1 {
+      font-size: 20px;
+      font-weight: 700;
+      color: #1a1d23;
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      font-size: 14px;
+      color: #696f7a;
+      line-height: 1.6;
+      margin-bottom: 32px;
+    }
+
+    .spinner {
+      width: 32px;
+      height: 32px;
+      border: 3px solid #e8e8e8;
+      border-top-color: #6264A7;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      margin: 0 auto 28px;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 14px 20px;
+      border-radius: 10px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      text-decoration: none;
+      transition: opacity 0.15s, transform 0.1s;
+    }
+
+    .btn:active {
+      transform: scale(0.98);
+    }
+
+    .btn-primary {
+      background: #6264A7;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+
+    .btn-primary:hover {
+      opacity: 0.88;
+    }
+
+    .btn-secondary {
+      background: #f0f0f0;
+      color: #1a1d23;
+    }
+
+    .btn-secondary:hover {
+      background: #e4e4e4;
+    }
+
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 20px 0;
+      color: #b0b5bd;
+      font-size: 12px;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: #e8e8e8;
+    }
+
+    .footer {
+      margin-top: 24px;
+      font-size: 12px;
+      color: #b0b5bd;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+
+    <h1>Teams로 연결 중...</h1>
+    <p class="subtitle">잠시 후 자동으로 Teams 앱이 열립니다.<br>앱이 설치되어 있지 않으면 아래 버튼을 눌러주세요.</p>
+
+    <div class="spinner"></div>
+
+    <button class="btn btn-primary" onclick="openApp()">
+      Teams 앱으로 열기
+    </button>
+
+    <div class="divider">또는</div>
+
+    <a class="btn btn-secondary" href="https://teams.microsoft.com/l/app/be02aee1-9c96-48da-8e90-8b36ea866c88" target="_blank">
+      웹 브라우저로 열기
+    </a>
+
+    <p class="footer">앱이 없으신가요? <a href="https://www.microsoft.com/microsoft-teams/download-app" style="color:#6264A7; text-decoration:none; font-weight:600;">Teams 다운로드</a></p>
+  </div>
+
+  <script>
+    function openApp() {
+      location.href = "msteams://teams.microsoft.com/l/app/be02aee1-9c96-48da-8e90-8b36ea866c88";
+    }
+
+    // 자동 딥링크 시도
+    openApp();
+
+    // 1.5초 후 스피너 숨김
+    setTimeout(function () {
+      document.querySelector(".spinner").style.display = "none";
+    }, 1500);
+  </script>
+</body>
+</html>
